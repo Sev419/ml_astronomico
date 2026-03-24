@@ -1,9 +1,10 @@
 import os
-import pandas as pd
+import numpy as np
 import matplotlib.pyplot as plt
 from sklearn.model_selection import train_test_split
 from sklearn.linear_model import LinearRegression
 from sklearn.metrics import mean_squared_error, r2_score
+
 
 def run_regresion(df):
     X = df[['u', 'g', 'r', 'i', 'z']]
@@ -26,11 +27,36 @@ def run_regresion(df):
         f.write(f"MSE: {mse}\n")
         f.write(f"R2: {r2}\n")
 
-    plt.scatter(y_test, y_pred)
+    plt.figure(figsize=(8, 6))
+
+    error = np.abs(y_test - y_pred)
+
+    scatter = plt.scatter(
+        y_test,
+        y_pred,
+        c=error,
+        cmap="viridis",
+        alpha=0.7
+    )
+
+    min_val = min(y_test.min(), y_pred.min())
+    max_val = max(y_test.max(), y_pred.max())
+
+    plt.plot(
+        [min_val, max_val],
+        [min_val, max_val],
+        color="red",
+        linestyle="--",
+        label="Predicción perfecta"
+    )
+
+    plt.colorbar(scatter, label="Error absoluto")
     plt.xlabel("Valores reales")
     plt.ylabel("Valores predichos")
     plt.title("Regresión lineal - Real vs Predicho")
+    plt.legend()
+    plt.grid(True)
     plt.savefig("outputs/regresion_real_vs_predicho.png")
     plt.close()
 
-    return mse, r2
+    print(f"Regresión terminada. MSE: {mse}, R2: {r2}")
