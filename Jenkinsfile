@@ -2,26 +2,25 @@ pipeline {
     agent any
 
     stages {
-        stage('Install') {
+        stage('Checkout') {
             steps {
-                sh 'python3 -m pip install --upgrade pip'
-                sh 'pip install -r requirements.txt'
+                echo 'Obteniendo el proyecto'
             }
         }
 
-        stage('Test') {
+        stage('Build Docker Image') {
             steps {
-                sh 'pytest'
+                sh 'docker build -t ml_astronomico .'
             }
         }
 
-        stage('Run') {
+        stage('Run Tests and Main Script in Docker') {
             steps {
-                sh 'python3 src/main.py'
+                sh 'docker run --rm -v $WORKSPACE/outputs:/app/outputs ml_astronomico'
             }
         }
 
-        stage('Artifacts') {
+        stage('Archive Artifacts') {
             steps {
                 archiveArtifacts artifacts: 'outputs/*', fingerprint: true
             }
