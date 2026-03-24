@@ -4,19 +4,20 @@ pipeline {
     stages {
         stage('Install') {
             steps {
-                bat 'pip install -r requirements.txt'
+                sh 'python3 -m pip install --upgrade pip'
+                sh 'pip install -r requirements.txt'
             }
         }
 
         stage('Test') {
             steps {
-                bat 'pytest'
+                sh 'pytest'
             }
         }
 
         stage('Run') {
             steps {
-                bat 'python src/main.py'
+                sh 'python3 src/main.py'
             }
         }
 
