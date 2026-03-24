@@ -16,6 +16,7 @@ pipeline {
 
         stage('Run Tests and Main Script in Docker') {
             steps {
+                sh 'mkdir -p outputs'
                 sh 'docker run --rm -v $WORKSPACE/outputs:/app/outputs ml_astronomico'
             }
         }
