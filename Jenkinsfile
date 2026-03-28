@@ -4,7 +4,7 @@ pipeline {
     stages {
         stage('Checkout') {
             steps {
-                echo 'Obteniendo el proyecto'
+                checkout scm
             }
         }
 
@@ -14,7 +14,13 @@ pipeline {
             }
         }
 
-        stage('Run Tests and Main Script in Docker') {
+        stage('Run Tests') {
+            steps {
+                sh 'docker run --rm ml_astronomico pytest tests/'
+            }
+        }
+
+        stage('Run Main Script') {
             steps {
                 sh 'mkdir -p outputs'
                 sh 'docker rm -f ml_astronomico_run || true'
@@ -25,7 +31,6 @@ pipeline {
         stage('Copy Outputs From Container') {
             steps {
                 sh 'docker cp ml_astronomico_run:/app/outputs/. outputs/'
-                sh 'docker rm -f ml_astronomico_run'
             }
         }
 
@@ -33,6 +38,12 @@ pipeline {
             steps {
                 archiveArtifacts artifacts: 'outputs/*', fingerprint: true
             }
+        }
+    }
+
+    post {
+        always {
+            sh 'docker rm -f ml_astronomico_run || true'
         }
     }
 }

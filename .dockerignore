@@ -1,6 +1,8 @@
 venv/
-.venv/
-outputs/
 __pycache__/
-*.pyc
+.git/
 .pytest_cache/
+outputs/
+*.pyc
+*.pyo
+*.pyd

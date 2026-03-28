@@ -1,6 +1,21 @@
+# Entorno virtual
 venv/
-.venv/
-outputs/
+
+# Python
 __pycache__/
 *.pyc
+*.pyo
+*.pyd
+
+# Testing
 .pytest_cache/
+
+# Outputs generados
+outputs/
+
+# Sistema
+.DS_Store
+Thumbs.db
+
+# VS Code
+.vscode/
