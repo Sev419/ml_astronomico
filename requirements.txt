@@ -4,3 +4,8 @@ matplotlib
 pytest  
 seaborn
 numpy
+jenkins-job-builder
+docker
+pytest-cov
+streamlit
+Pillow
