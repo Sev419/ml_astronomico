@@ -161,6 +161,20 @@ La clasificación mostró un desempeño sobresaliente, con alta precisión en la
 La regresión evidenció limitaciones, lo que sugiere el uso de modelos más complejos.
 El clustering permitió identificar patrones relevantes en los datos sin supervisión.
 El proyecto demuestra la aplicabilidad de técnicas de Machine Learning en problemas reales.
+
+-------------------------------------------------------> Dashboard interactivos.<-------------------------------------------------------
+
+El proyecto incluye un dashboard desarrollado en **Streamlit**, diseñado para presentar de manera visual y comparativa los resultados obtenidos en los modelos de clasificación, regresión y clustering aplicados al dataset astronómico.
+
+Este dashboard permite consolidar en una sola interfaz:
+
+- métricas principales de clasificación, regresión y clustering
+- indicadores clave de desempeño (Accuracy, R² y Silhouette Score)
+- visualizaciones comparativas de los resultados generados por cada modelo
+- una estructura ejecutiva que facilita la interpretación académica del proyecto
+
+Su objetivo es complementar el análisis técnico del pipeline de Machine Learning mediante una presentación más clara, organizada e intuitiva.
+
 📎 Autor
 
 Sebastian Urrego Argaez
