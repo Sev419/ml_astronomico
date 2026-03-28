@@ -151,7 +151,7 @@ pytest
 
  Automatización
 
-Se incluye un Jenkinsfile que permite:
+Se incluye un Jenkinsfile mediante DOCKER que permite:
 
 construir el entorno
 ejecutar el pipeline
