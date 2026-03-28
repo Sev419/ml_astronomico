@@ -1,7 +1,7 @@
-# ml_astronomico
+
 # Pipeline de Machine Learning para Datos Astronómicos
 
-##  Descripción del proyecto
+#  Descripción del proyecto
 
 Este proyecto implementa un pipeline completo de Machine Learning aplicado a datos astronómicos, abordando tres enfoques principales:
 
@@ -15,15 +15,12 @@ Además, se incorporan buenas prácticas como:
 - visualización de resultados
 - automatización parcial con Jenkins
 
----
-
-## Objetivo
+# Objetivo
 
 Desarrollar un pipeline reproducible de Machine Learning que permita analizar datos astronómicos mediante modelos de clasificación, regresión y clustering, generando resultados interpretables y visualmente comprensibles.
 
----
 
-## Estructura del proyecto
+# Estructura del proyecto
 ml_astronomico/
 │
 ├── data/
@@ -52,9 +49,7 @@ ml_astronomico/
 ├── requirements.txt
 └── README.md
 
----
-
-## Tecnologías utilizadas
+# Tecnologías utilizadas
 
 - Python 3.12
 - Pandas
@@ -65,11 +60,9 @@ ml_astronomico/
 - Pytest
 - Jenkins
 
----
+# Modelos implementados
 
-## Modelos implementados
-
-### 1. Clasificación (KNN)
+1. Clasificación (KNN)
 
 - Algoritmo: K-Nearest Neighbors (k=5)
 - Variables: u, g, r, i, z
@@ -84,7 +77,7 @@ El modelo presenta un desempeño alto, logrando una clasificación precisa de lo
 
 ---
 
-### 2. Regresión (Redshift)
+2. Regresión (Redshift)
 
 - Algoritmo: Regresión Lineal
 
@@ -99,7 +92,7 @@ El modelo presenta un desempeño moderado, indicando que la relación entre las 
 
 ---
 
-### 3. Clustering (KMeans)
+3. Clustering (KMeans)
 
 - Algoritmo: KMeans
 - Número de clusters: 3
@@ -113,7 +106,7 @@ Se obtuvo una buena separación entre clusters, evidenciando la capacidad del mo
 
 ---
 
-## Visualizaciones generadas
+Visualizaciones generadas
 
 El proyecto genera automáticamente:
 
@@ -127,9 +120,9 @@ Estas visualizaciones permiten interpretar los resultados de manera clara y comp
 
 ---
 
-## Ejecución del proyecto
+Ejecución del proyecto
 
-### 1. Crear entorno virtual
+1. Crear entorno virtual
 
 ```bash
 python -m venv venv
